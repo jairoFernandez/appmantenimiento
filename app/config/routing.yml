@@ -2,6 +2,3 @@ mantenimiento:
     resource: "@MantenimientoBundle/Resources/config/routing.yml"
     prefix:   /admin
 
-app:
-    resource: "@AppBundle/Controller/"
-    type:     annotation
