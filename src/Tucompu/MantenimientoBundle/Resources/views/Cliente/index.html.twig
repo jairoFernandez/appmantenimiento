@@ -1,0 +1,53 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Listado de Clientes</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>Nombres</th>
+                <th>Fecha creación</th>
+                <th>Estado</th>
+                <th>Telefono</th>
+                <th>Direccion</th>
+                <th>Email</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('cliente_show', { 'id': entity.id }) }}">{{ loop.index }}</a></td>
+                <td>{{ entity.nombres }}</td>
+                <td>{% if entity.fechaCreacion %}{{ entity.fechaCreacion|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                        {% if entity.estado == true %}
+                                <i class="fa fa-check-circle"></i>
+                        {% else %}
+                                <i class="fa fa-times"></i>
+                        {% endif %}
+            
+                </td>
+                <td>{{ entity.telefono }}</td>
+                <td>{{ entity.direccion }}</td>
+                <td>{{ entity.email }}</td>
+                <td>
+
+                        <a href="{{ path('cliente_show', { 'id': entity.id }) }}" class="btn btn-success">Ver</a>
+                        <a href="{{ path('cliente_edit', { 'id': entity.id }) }}" class="btn btn-warning">Editar</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('cliente_new') }}" class="btn btn-primary">
+                Crear nuevo
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

@@ -1,0 +1,44 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Mantenimiento</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Fechaprogramada</th>
+                <td>{{ entity.fechaProgramada|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Fechavisita</th>
+                <td>{{ entity.fechaVisita|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Duracionservicio</th>
+                <td>{{ entity.duracionServicio }}</td>
+            </tr>
+            <tr>
+                <th>Comentario</th>
+                <td>{{ entity.comentario }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('mantenimiento') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('mantenimiento_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

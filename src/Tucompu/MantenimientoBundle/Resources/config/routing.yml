@@ -1,0 +1,23 @@
+mantenimiento_tecnico:
+    resource: "@MantenimientoBundle/Resources/config/routing/tecnico.yml"
+    prefix:   /tecnico
+
+mantenimiento_mantenimiento:
+    resource: "@MantenimientoBundle/Resources/config/routing/mantenimiento.yml"
+    prefix:   /mantenimiento
+
+mantenimiento_tipoequipo:
+    resource: "@MantenimientoBundle/Resources/config/routing/tipoequipo.yml"
+    prefix:   /tipoequipo
+
+mantenimiento_equipo:
+    resource: "@MantenimientoBundle/Resources/config/routing/equipo.yml"
+    prefix:   /equipo
+
+mantenimiento_cliente:
+    resource: "@MantenimientoBundle/Resources/config/routing/cliente.yml"
+    prefix:   /cliente
+
+mantenimiento_homepage:
+    path:     /
+    defaults: { _controller: MantenimientoBundle:Default:index }

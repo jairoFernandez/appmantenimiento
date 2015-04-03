@@ -1,0 +1,30 @@
+equipo:
+    path:     /
+    defaults: { _controller: "MantenimientoBundle:Equipo:index" }
+
+equipo_show:
+    path:     /{id}/show
+    defaults: { _controller: "MantenimientoBundle:Equipo:show" }
+
+equipo_new:
+    path:     /new
+    defaults: { _controller: "MantenimientoBundle:Equipo:new" }
+
+equipo_create:
+    path:     /create
+    defaults: { _controller: "MantenimientoBundle:Equipo:create" }
+    requirements: { _method: post }
+
+equipo_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "MantenimientoBundle:Equipo:edit" }
+
+equipo_update:
+    path:     /{id}/update
+    defaults: { _controller: "MantenimientoBundle:Equipo:update" }
+    requirements: { _method: post|put }
+
+equipo_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "MantenimientoBundle:Equipo:delete" }
+    requirements: { _method: post|delete }

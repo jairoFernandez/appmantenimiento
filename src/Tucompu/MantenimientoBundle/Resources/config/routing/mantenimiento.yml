@@ -1,0 +1,30 @@
+mantenimiento:
+    path:     /
+    defaults: { _controller: "MantenimientoBundle:Mantenimiento:index" }
+
+mantenimiento_show:
+    path:     /{id}/show
+    defaults: { _controller: "MantenimientoBundle:Mantenimiento:show" }
+
+mantenimiento_new:
+    path:     /new
+    defaults: { _controller: "MantenimientoBundle:Mantenimiento:new" }
+
+mantenimiento_create:
+    path:     /create
+    defaults: { _controller: "MantenimientoBundle:Mantenimiento:create" }
+    requirements: { _method: post }
+
+mantenimiento_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "MantenimientoBundle:Mantenimiento:edit" }
+
+mantenimiento_update:
+    path:     /{id}/update
+    defaults: { _controller: "MantenimientoBundle:Mantenimiento:update" }
+    requirements: { _method: post|put }
+
+mantenimiento_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "MantenimientoBundle:Mantenimiento:delete" }
+    requirements: { _method: post|delete }
